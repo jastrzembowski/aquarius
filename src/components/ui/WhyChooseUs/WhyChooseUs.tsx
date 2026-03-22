@@ -20,7 +20,7 @@ export const WhyChooseUs = () => {
               Dlaczego Aquarius Osuszanie
             </span>
             <h2 className={styles.title}>
-              Sprawdzone doświadczenie w osuszaniu budynków
+              Doświadczenie w osuszaniu budynków
             </h2>
             <p className={styles.description}>
               Dzięki latom doświadczenia pomogliśmy setkom klientów

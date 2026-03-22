@@ -5,8 +5,8 @@ const steps = [
   {
     icon: PhoneCall,
     step: "01",
-    title: "Zgłoszenie awaryjne",
-    description: "Skontaktuj się z nami 24/7. Wysyłamy ekipę nawet w ciągu kilku godzin od telefonu.",
+    title: "Zgłoszenie",
+    description: "Skontaktuj się z nami 24/7. Wysyłamy ekipę nawet w ciągu kilku godzin.",
   },
 
   {
@@ -18,13 +18,13 @@ const steps = [
   {
     icon: Wrench,
     step: "03",
-    title: "Osuszanie i naprawa",
-    description: "Uruchamiamy sprzęt przemysłowy i codziennie monitorujemy postępy prac.",
+    title: "Osuszanie",
+    description: "Uruchamiamy sprzęt przemysłowy i nieustannie monitorujemy postępy prac.",
   },
   {
     icon: CheckCircle,
     step: "04",
-    title: "Końcowa kontrola",
+    title: "Kontrola",
     description: "Potwierdzamy pełne osuszenie i przekazujemy kompletną dokumentację.",
   },
 ];
@@ -35,9 +35,9 @@ export const Process = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.kicker}>Jak to działa</span>
-          <h2 className={styles.title}>Nasz proces</h2>
+          <h2 className={styles.title}>Proces osuszania budynków</h2>
           <p className={styles.subtitle}>
-            Sprawdzone 4 kroki, dzięki którym szybko przywracamy budynek do bezpiecznego stanu.
+            4 kroki, dzięki którym szybko przywracamy budynek do bezpiecznego stanu.
           </p>
         </div>
 

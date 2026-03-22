@@ -22,7 +22,6 @@ export const Contact = () => {
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
 
-    // Honeypot field: bots often fill hidden fields.
     if ((formData.get("company") as string) !== "") {
       return;
     }
@@ -74,7 +73,7 @@ export const Contact = () => {
               Gotowy, by rozwiązać problem wilgoci?
             </h2>
             <p className={styles.description}>
-              Skontaktuj się z nami, aby otrzymać bezpłatną ocenę lub wezwanie awaryjne. Jesteśmy dostępni przez całą dobę.
+              Skontaktuj się z nami, aby otrzymać bezpłatną wycenę. Jesteśmy dostępni przez całą dobę.
             </p>
 
             <div className={styles.infoList}>
