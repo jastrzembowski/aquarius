@@ -1,0 +1,32 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-foreground);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.logoMd {
+  font-size: 1.25rem;
+}
+
+.logoSm {
+  font-size: 1.1rem;
+}
+
+.logoMark {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  flex-shrink: 0;
+  background: currentColor;
+  -webkit-mask: url("../../../assets/logo.png") center / contain no-repeat;
+  mask: url("../../../assets/logo.png") center / contain no-repeat;
+}
+
+.logoSm .logoMark {
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,117 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(20, 20, 19, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktopMenu {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.ctaButton,
+.mobileCtaButton {
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ctaButton {
+  height: 36px;
+  padding: 0 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileCtaButton {
+  width: 100%;
+  height: 38px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.ctaButton:hover,
+.mobileCtaButton:hover {
+  background: #e6c600;
+}
+
+.mobileToggle {
+  background: transparent;
+  border: 0;
+  color: var(--primary-foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--primary);
+  padding: 16px 24px;
+}
+
+.mobileLink {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.mobileLink:hover {
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 48px;
+  }
+
+  .desktopMenu {
+    display: inline-flex;
+  }
+
+  .mobileToggle,
+  .mobileMenu {
+    display: none;
+  }
+}
