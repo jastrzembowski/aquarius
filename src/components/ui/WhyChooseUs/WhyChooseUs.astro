@@ -1,0 +1,63 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+
+import styles from "./WhyChooseUs.module.scss";
+
+const reasons = [
+  "Certyfikowani i ubezpieczeni technicy",
+  "Dostępna interwencja awaryjna 24/7",
+  "Nowoczesny sprzęt osuszający",
+  "Szczegółowa dokumentacja wilgoci",
+  "Pomoc w roszczeniach ubezpieczeniowych",
+  "Metody przyjazne dla środowiska",
+];
+
+const stats = [
+  { value: "100%", label: "Zadowolenie klientów" },
+  { value: "4h", label: "Średni czas reakcji" },
+  { value: "100+", label: "Osuszonych budynków" },
+  { value: "0", label: "Incydentów bezpieczeństwa" },
+];
+---
+
+<section id="about" class={styles.section}>
+  <div class={styles.container}>
+    <div class={styles.grid}>
+      <div>
+        <span class={styles.kicker}>Dlaczego Aquarius Osuszanie</span>
+        <h2 class={styles.title}>Doświadczenie w osuszaniu budynków</h2>
+        <p class={styles.description}>
+          Dzięki latom doświadczenia pomogliśmy setkom klientów szybko oraz skutecznie usunąć skutki
+          zalań. Nasze systematyczne podejście zapewnia dokładne osuszanie przy minimalnych
+          utrudnieniach.
+        </p>
+
+        <div class={styles.reasons}>
+          {
+            reasons.map((reason) => (
+              <div class={styles.reasonItem}>
+                <LucideIcon name="circle-check" size={20} class={styles.reasonIcon} />
+                <span class={styles.reasonText}>{reason}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <div class={styles.statsPanel}>
+          <div class={styles.statsGrid}>
+            {
+              stats.map((stat) => (
+                <div class={styles.statItem}>
+                  <div class={styles.statValue}>{stat.value}</div>
+                  <div class={styles.statLabel}>{stat.label}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

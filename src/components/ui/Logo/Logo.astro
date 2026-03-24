@@ -1,0 +1,21 @@
+---
+import logoSrc from "@/assets/logo.png?url";
+
+import styles from "./Logo.module.scss";
+
+interface Props {
+  size?: "sm" | "md";
+  href?: string;
+  class?: string;
+}
+
+const { size = "md", href = "#", class: className = "" } = Astro.props;
+const sizeClass = size === "sm" ? styles.logoSm : styles.logoMd;
+const rootClassName = `${styles.logo} ${sizeClass} ${className}`.trim();
+const maskUrl = `url(${logoSrc})`;
+---
+
+<a href={href} class={rootClassName}>
+  <span class={styles.logoMark} style={`--logo-mask: ${maskUrl}`} aria-hidden="true" />
+  Aqurius-Osuszanie
+</a>

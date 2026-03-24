@@ -1,0 +1,72 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+
+import styles from "./Services.module.scss";
+
+const services: {
+  icon: "droplets" | "wind" | "thermometer" | "shield" | "building-2" | "clipboard-check";
+  title: string;
+  description: string;
+}[] = [
+  {
+    icon: "droplets",
+    title: "Usuwanie skutków zalania",
+    description:
+      "Pełne odpompowanie wody i osuszanie konstrukcji po powodziach, przeciekach lub pękniętych rurach.",
+  },
+  {
+    icon: "wind",
+    title: "Osuszanie powietrza",
+    description: "Profesjonalne osuszacze przemysłowe przywracające bezpieczny poziom wilgotności.",
+  },
+  {
+    icon: "thermometer",
+    title: "Kontrola klimatu",
+    description: "Monitorowanie temperatury i wilgotności przez cały proces osuszania.",
+  },
+  {
+    icon: "shield",
+    title: "Zapobieganie pleśni",
+    description:
+      "Działania antybakteryjne i przeciwgrzybiczne ograniczające rozwój pleśni podczas prac.",
+  },
+  {
+    icon: "building-2",
+    title: "Osuszanie obiektów komercyjnych",
+    description: "Skalowalne rozwiązania dla magazynów, biur i hal przemysłowych.",
+  },
+  {
+    icon: "clipboard-check",
+    title: "Ocena zawilgocenia",
+    description:
+      "Szczegółowa mapa wilgoci i dokumentacja przydatna przy roszczeniach ubezpieczeniowych.",
+  },
+];
+---
+
+<section id="services" class={styles.section}>
+  <div class={styles.container}>
+    <div class={styles.header}>
+      <span class={styles.kicker}>Czym się zajmujemy</span>
+      <h2 class={styles.title}>Nasze usługi</h2>
+      <p class={styles.subtitle}>
+        Od szybkiej interwencji po długoterminowe zarządzanie wilgocią, zapewniamy kompleksowe
+        osuszanie budynków.
+      </p>
+    </div>
+
+    <div class={styles.grid}>
+      {
+        services.map((service) => (
+          <div class={styles.card}>
+            <div class={styles.iconWrap}>
+              <LucideIcon name={service.icon} size={24} class={styles.icon} />
+            </div>
+            <h3 class={styles.cardTitle}>{service.title}</h3>
+            <p class={styles.cardDescription}>{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

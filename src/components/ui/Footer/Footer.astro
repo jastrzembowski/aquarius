@@ -1,0 +1,20 @@
+---
+import Logo from "@/components/ui/Logo/Logo.astro";
+
+import styles from "./Footer.module.scss";
+
+const year = new Date().getFullYear();
+---
+
+<footer class={styles.footer}>
+  <div class={styles.container}>
+    <div class={styles.column}>
+      <Logo size="sm" href="/" />
+      <span class={styles.companyInfo}>AQUARIUS Sp. z o.o. | NIP: 6711869391</span>
+    </div>
+    <div class:list={[styles.column, styles.columnEnd]}>
+      <a href="/privacy-policy" class={styles.privacyPolicyLink}>Polityka prywatności</a>
+      <p class={styles.copy}>© {year} Aqurius-Osuszanie. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </div>
+</footer>

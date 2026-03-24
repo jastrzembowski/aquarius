@@ -1,0 +1,75 @@
+---
+import "../index.scss";
+
+import Footer from "@/components/ui/Footer/Footer.astro";
+import Navbar from "@/components/ui/Navbar/Navbar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path after domain, e.g. `/privacy-policy`. Omit `canonical` / `og:url` when false. */
+  omitCanonical?: boolean;
+  canonicalPath?: string;
+}
+
+const {
+  title = "Aqurius-Osuszanie - Nadmorskie Centrum Osuszania",
+  description = "Profesjonalne osuszanie budynków i szybka pomoc",
+  omitCanonical = false,
+  canonicalPath = "/",
+} = Astro.props;
+
+const site = Astro.site?.toString().replace(/\/$/, "") ?? "https://aqurius-osuszanie.pl";
+const canonicalUrl = `${site}${canonicalPath === "/" ? "" : canonicalPath}`;
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Aqurius-Osuszanie" />
+    <meta name="robots" content="index, follow" />
+
+    {!omitCanonical && <link rel="canonical" href={canonicalUrl} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Aqurius-Osuszanie" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {!omitCanonical && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:image" content={`${site}/placeholder.svg`} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}/placeholder.svg`} />
+
+    <script type="application/ld+json" set:text={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      name: "Aqurius-Osuszanie",
+      url: `${site}/`,
+      image: `${site}/placeholder.svg`,
+      telephone: "+48 726 434 249",
+      email: "biuro@aqurius-osuszanie.pl",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kolumba 23a/40",
+        addressLocality: "Kolobrzeg",
+        postalCode: "78-100",
+        addressCountry: "PL",
+      },
+      areaServed: "Kolobrzeg i okolice",
+      priceRange: "$$",
+    })} />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>

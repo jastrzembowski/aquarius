@@ -1,0 +1,70 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+import heroImage from "@/assets/magazyn.png?url";
+import { CONTACT_PHONE } from "@/constants/constants";
+
+import styles from "./Hero.module.scss";
+
+const stats = [
+  { value: "100+", label: "Zrealizowanych projektów" },
+  { value: "do 4h", label: "Średni czas reakcji" },
+  { value: "90+", label: "Maszyn osuszających" },
+];
+---
+
+<section class={styles.hero}>
+  <div class={styles.background}>
+    <img
+      src={heroImage}
+      alt="Profesjonalny sprzęt do osuszania budynków w trakcie pracy"
+      class={styles.backgroundImage}
+      loading="eager"
+    />
+    <div class={styles.overlay} />
+  </div>
+
+  <div class={styles.container}>
+    <div class={styles.content}>
+      <div class:list={[styles.badge, styles.fadeInUp]}>
+        <span class={styles.badgeDot} />
+        <span class={styles.badgeText}>Interwencja awaryjna 24/7</span>
+      </div>
+
+      <h1 class:list={[styles.title, styles.fadeInUp]} style="animation-delay: 0.1s">
+        Nadmorskie
+        <br />
+        <span class={styles.titleAccent}>Centrum Osuszania</span>
+      </h1>
+      <p class:list={[styles.subtitle, styles.fadeInUp]} style="animation-delay: 0.2s">
+        Profesjonalne osuszanie budynków
+        <br /> i szybka pomoc
+      </p>
+      <p class:list={[styles.description, styles.fadeInUp]} style="animation-delay: 0.2s">
+        Szybkie i skuteczne usuwanie wilgoci z obiektów komercyjnych oraz mieszkalnych. Minimalizujemy
+        przestoje i zapobiegamy uszkodzeniom konstrukcji.
+      </p>
+
+      <div class:list={[styles.actions, styles.fadeInUp]} style="animation-delay: 0.3s">
+        <a href="#contact" class={styles.primaryButton}>
+          Zamów usługę
+          <LucideIcon name="arrow-right" size={20} />
+        </a>
+        <a href={`tel:${CONTACT_PHONE}`} class={styles.secondaryButton}>
+          <LucideIcon name="phone" size={20} />
+          Linia awaryjna
+        </a>
+      </div>
+
+      <div class:list={[styles.stats, styles.fadeInUp]} style="animation-delay: 0.4s">
+        {
+          stats.map((stat) => (
+            <div class={styles.statItem}>
+              <div class={styles.statValue}>{stat.value}</div>
+              <div class={styles.statLabel}>{stat.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

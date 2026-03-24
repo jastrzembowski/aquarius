@@ -1,0 +1,64 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+
+import styles from "./Process.module.scss";
+
+const steps: {
+  icon: "phone-call" | "search" | "wrench" | "circle-check-big";
+  step: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    icon: "phone-call",
+    step: "01",
+    title: "Zgłoszenie",
+    description: "Skontaktuj się z nami 24/7. Wysyłamy ekipę nawet w ciągu kilku godzin.",
+  },
+  {
+    icon: "search",
+    step: "02",
+    title: "Tworzenie dokumentacji",
+    description: "Tworzymy szczegółową dokumentację wilgoci dla ubezpieczyciela.",
+  },
+  {
+    icon: "wrench",
+    step: "03",
+    title: "Osuszanie",
+    description: "Uruchamiamy sprzęt przemysłowy i nieustannie monitorujemy postępy prac.",
+  },
+  {
+    icon: "circle-check-big",
+    step: "04",
+    title: "Kontrola",
+    description: "Potwierdzamy pełne osuszenie i przekazujemy kompletną dokumentację.",
+  },
+];
+---
+
+<section class={styles.section} id="process">
+  <div class={styles.container}>
+    <div class={styles.header}>
+      <span class={styles.kicker}>Jak to działa</span>
+      <h2 class={styles.title}>Proces osuszania budynków</h2>
+      <p class={styles.subtitle}>
+        4 kroki, dzięki którym szybko przywracamy budynek do bezpiecznego stanu.
+      </p>
+    </div>
+
+    <div class={styles.grid}>
+      {
+        steps.map((item, index) => (
+          <div class={styles.card}>
+            {index < steps.length - 1 && <div class={styles.connector} />}
+            <div class={styles.iconWrap}>
+              <LucideIcon name={item.icon} size={30} class={styles.icon} />
+            </div>
+            <h3 class={styles.cardTitle}>{item.title}</h3>
+            <p class={styles.cardDescription}>{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

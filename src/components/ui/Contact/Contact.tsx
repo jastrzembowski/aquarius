@@ -101,7 +101,7 @@ export const Contact = () => {
               role="status"
               aria-live="polite"
             >
-              Wiadomośc została wysłana!
+              Wiadomość została wysłana!
             </div>
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formTwoCols}>

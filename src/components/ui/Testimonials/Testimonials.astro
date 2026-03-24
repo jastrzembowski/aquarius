@@ -1,0 +1,55 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+
+import styles from "./Testimonials.module.scss";
+
+const testimonials = [
+  {
+    name: "Krzysztof",
+    role: "Właściciel nieruchomości",
+    quote:
+      "Korzystałem z usług firmy Aquarius. Firma profesjonalna z bardzo nowoczesnym i skutecznym sprzętem do osuszania. Bardzo dobrzy fachowcy i co ważne terminowi i słowni. Na kłopoty polecam w pełni Aquariusa.",
+    stars: 5,
+  },
+  {
+    name: "Robert",
+    role: "Właściciel nieruchomości",
+    quote: "Polecam z całego serducho, szybko, profesjonalnie i Panowie z doświadczeniem.",
+    stars: 5,
+  },
+  {
+    name: "Anita",
+    role: "Właściciel nieruchomości",
+    quote: "Firma godna polecenia szybko sprawnie i fachowo. Polecam",
+    stars: 5,
+  },
+];
+---
+
+<section class={styles.section} id="testimonials">
+  <div class={styles.container}>
+    <div class={styles.header}>
+      <span class={styles.kicker}>Opinie klientów</span>
+      <h2 class={styles.title}>Co mówią nasi klienci w Google Reviews</h2>
+    </div>
+
+    <div class={styles.grid}>
+      {
+        testimonials.map((item) => (
+          <article class={styles.card}>
+            <div class={styles.stars}>
+              {Array.from({ length: item.stars }).map(() => (
+                <LucideIcon name="star" size={16} class={styles.star} />
+              ))}
+            </div>
+            <p class={styles.quote}>"{item.quote}"</p>
+            <div>
+              <div class={styles.name}>{item.name}</div>
+              <div class={styles.role}>{item.role}</div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

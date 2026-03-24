@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import styles from "@/components/NotFound.module.scss";
+---
+
+<BaseLayout
+  title="Strona nie znaleziona (404) | Aqurius-Osuszanie"
+  description="Nie znaleziono żądanej strony."
+  omitCanonical={true}
+>
+  <div class={styles.wrapper}>
+    <div class={styles.content}>
+      <h1 class={styles.code}>404</h1>
+      <p class={styles.message}>Ups! Nie znaleziono strony</p>
+      <a href="/" class={styles.link}>Wróć na stronę główną</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  console.error(
+    "Błąd 404: użytkownik próbował wejść na nieistniejącą ścieżkę:",
+    window.location.pathname,
+  );
+</script>

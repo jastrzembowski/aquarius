@@ -1,0 +1,89 @@
+---
+import LucideIcon from "@/components/LucideIcon.astro";
+import { CONTACT_EMAIL } from "@/constants/constants";
+
+import Logo from "../Logo/Logo.astro";
+
+import styles from "./Navbar.module.scss";
+
+const links = [
+  { label: "Usługi", href: "services" },
+  { label: "O nas", href: "about" },
+  { label: "Jak to działa", href: "process" },
+  { label: "Kontakt", href: "contact" },
+];
+---
+
+<nav class={styles.navbar}>
+  <div class={styles.container}>
+    <Logo size="md" href="/" />
+
+    <div class={styles.desktopMenu}>
+      {
+        links.map((link) => (
+          <a href={`#${link.href}`} class={styles.navLink}>
+            {link.label}
+          </a>
+        ))
+      }
+      <a href={`mailto:${CONTACT_EMAIL}`} class={styles.ctaButton}>
+        Poproś o wycenę
+      </a>
+    </div>
+
+    <button
+      type="button"
+      class={styles.mobileToggle}
+      id="nav-menu-toggle"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Otwórz menu"
+    >
+      <span id="nav-icon-open">
+        <LucideIcon name="menu" size={24} />
+      </span>
+      <span id="nav-icon-close" hidden>
+        <LucideIcon name="x" size={24} />
+      </span>
+    </button>
+  </div>
+
+  <div class={styles.mobileMenu} id="mobile-menu" hidden>
+    {
+      links.map((link) => (
+        <a href={`#${link.href}`} class={styles.mobileLink} data-nav-link>
+          {link.label}
+        </a>
+      ))
+    }
+    <a href={`mailto:${CONTACT_EMAIL}`} class={styles.mobileCtaButton}>
+      Poproś o wycenę
+    </a>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById("nav-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("nav-icon-open");
+  const iconClose = document.getElementById("nav-icon-close");
+
+  function setOpen(open) {
+    if (menu) menu.hidden = !open;
+    if (iconOpen) iconOpen.hidden = open;
+    if (iconClose) iconClose.hidden = !open;
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Zamknij menu" : "Otwórz menu");
+    }
+  }
+
+  toggle?.addEventListener("click", () => {
+    const willOpen = menu?.hidden ?? false;
+    setOpen(willOpen);
+  });
+
+  document.querySelectorAll("[data-nav-link]").forEach((el) => {
+    el.addEventListener("click", () => setOpen(false));
+  });
+</script>

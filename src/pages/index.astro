@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Contact } from "@/components/ui/Contact/Contact";
+import Hero from "@/components/ui/Hero/Hero.astro";
+import Services from "@/components/ui/Services/Services.astro";
+import WhyChooseUs from "@/components/ui/WhyChooseUs/WhyChooseUs.astro";
+import Process from "@/components/ui/Process/Process.astro";
+import Testimonials from "@/components/ui/Testimonials/Testimonials.astro";
+import styles from "@/components/HomePage.module.scss";
+---
+
+<BaseLayout>
+  <div class={styles.page}>
+    <Hero />
+    <Services />
+    <WhyChooseUs />
+    <Process />
+    <Testimonials />
+    <Contact />
+  </div>
+</BaseLayout>
