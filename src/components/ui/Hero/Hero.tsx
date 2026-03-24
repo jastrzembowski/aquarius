@@ -1,7 +1,9 @@
 import { ArrowRight, Phone } from "lucide-react";
+
 import heroImage from "@/assets/magazyn.png";
-import styles from "./Hero.module.scss";
 import { CONTACT_PHONE } from "@/constants/constants";
+
+import styles from "./Hero.module.scss";
 
 export const Hero = () => {
   return (
@@ -23,19 +25,26 @@ export const Hero = () => {
           </div>
 
           <h1 className={`${styles.title} ${styles.fadeInUp}`} style={{ animationDelay: "0.1s" }}>
-            Profesjonalne
+            Nadmorskie
             <br />
-            <span className={styles.titleAccent}>Osuszanie budynków</span>
-            <br />
-            i szybka pomoc
+            <span className={styles.titleAccent}>Centrum Osuszania</span>
           </h1>
-
-          <p className={`${styles.description} ${styles.fadeInUp}`} style={{ animationDelay: "0.2s" }}>
+          <p className={`${styles.subtitle} ${styles.fadeInUp}`} style={{ animationDelay: "0.2s" }}>
+            Profesjonalne osuszanie budynków
+            <br /> i szybka pomoc
+          </p>
+          <p
+            className={`${styles.description} ${styles.fadeInUp}`}
+            style={{ animationDelay: "0.2s" }}
+          >
             Szybkie i skuteczne usuwanie wilgoci z obiektów komercyjnych oraz mieszkalnych.
             Minimalizujemy przestoje i zapobiegamy uszkodzeniom konstrukcji.
           </p>
 
-          <div className={`${styles.actions} ${styles.fadeInUp}`} style={{ animationDelay: "0.3s" }}>
+          <div
+            className={`${styles.actions} ${styles.fadeInUp}`}
+            style={{ animationDelay: "0.3s" }}
+          >
             <a href="#contact" className={styles.primaryButton}>
               Zamów usługę
               <ArrowRight size={20} />

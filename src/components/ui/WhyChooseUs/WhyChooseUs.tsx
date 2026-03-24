@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+
 import styles from "./WhyChooseUs.module.scss";
 
 const reasons = [
@@ -16,16 +17,12 @@ export const WhyChooseUs = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div>
-            <span className={styles.kicker}>
-              Dlaczego Aquarius Osuszanie
-            </span>
-            <h2 className={styles.title}>
-              Doświadczenie w osuszaniu budynków
-            </h2>
+            <span className={styles.kicker}>Dlaczego Aquarius Osuszanie</span>
+            <h2 className={styles.title}>Doświadczenie w osuszaniu budynków</h2>
             <p className={styles.description}>
-              Dzięki latom doświadczenia pomogliśmy setkom klientów
-            szybko oraz skutecznie usunąć skutki zalań. Nasze systematyczne podejście
-              zapewnia dokładne osuszanie przy minimalnych utrudnieniach.
+              Dzięki latom doświadczenia pomogliśmy setkom klientów szybko oraz skutecznie usunąć
+              skutki zalań. Nasze systematyczne podejście zapewnia dokładne osuszanie przy
+              minimalnych utrudnieniach.
             </p>
 
             <div className={styles.reasons}>
@@ -48,9 +45,7 @@ export const WhyChooseUs = () => {
                   { value: "0", label: "Incydentów bezpieczeństwa" },
                 ].map((stat) => (
                   <div key={stat.label} className={styles.statItem}>
-                    <div className={styles.statValue}>
-                      {stat.value}
-                    </div>
+                    <div className={styles.statValue}>{stat.value}</div>
                     <div className={styles.statLabel}>{stat.label}</div>
                   </div>
                 ))}

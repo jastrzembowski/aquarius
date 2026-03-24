@@ -1,12 +1,16 @@
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import styles from "./NotFound.module.scss";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error("Błąd 404: użytkownik próbował wejść na nieistniejącą ścieżkę:", location.pathname);
+    console.error(
+      "Błąd 404: użytkownik próbował wejść na nieistniejącą ścieżkę:",
+      location.pathname,
+    );
   }, [location.pathname]);
 
   return (

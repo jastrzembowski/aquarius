@@ -1,8 +1,10 @@
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import styles from "./Navbar.module.scss";
-import { Logo } from "../Logo/Logo";
+import { useState } from "react";
+
 import { CONTACT_EMAIL } from "@/constants/constants";
+
+import { Logo } from "../Logo/Logo";
+import styles from "./Navbar.module.scss";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,31 +19,20 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Logo size="md" />
+        <Logo size="md" href="/" />
 
         <div className={styles.desktopMenu}>
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={`#${link.href}`}
-              className={styles.navLink}
-            >
+            <a key={link.href} href={`#${link.href}`} className={styles.navLink}>
               {link.label}
             </a>
           ))}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className={styles.ctaButton}
-          >
+          <a href={`mailto:${CONTACT_EMAIL}`} className={styles.ctaButton}>
             Poproś o wycenę
           </a>
         </div>
 
-        <button
-          type="button"
-          className={styles.mobileToggle}
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <button type="button" className={styles.mobileToggle} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -58,10 +49,7 @@ export const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className={styles.mobileCtaButton}
-          >
+          <a href={`mailto:${CONTACT_EMAIL}`} className={styles.mobileCtaButton}>
             Poproś o wycenę
           </a>
         </div>

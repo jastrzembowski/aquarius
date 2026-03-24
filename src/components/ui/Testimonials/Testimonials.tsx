@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+
 import styles from "./Testimonials.module.scss";
 
 const testimonials = [
@@ -12,15 +13,13 @@ const testimonials = [
   {
     name: "Robert",
     role: "Właściciel nieruchomości",
-    quote:
-      "Polecam z całego serducho, szybko, profesjonalnie i Panowie z doświadczeniem.",
+    quote: "Polecam z całego serducho, szybko, profesjonalnie i Panowie z doświadczeniem.",
     stars: 5,
   },
   {
     name: "Anita",
     role: "Właściciel nieruchomości",
-    quote:
-      "Firma godna polecenia szybko sprawnie i fachowo. Polecam",
+    quote: "Firma godna polecenia szybko sprawnie i fachowo. Polecam",
     stars: 5,
   },
 ];

@@ -1,4 +1,5 @@
-import { PhoneCall, Search, Wrench, CheckCircle } from "lucide-react";
+import { CheckCircle, PhoneCall, Search, Wrench } from "lucide-react";
+
 import styles from "./Process.module.scss";
 
 const steps = [
@@ -48,7 +49,7 @@ export const Process = () => {
               <div className={styles.iconWrap}>
                 <item.icon size={30} className={styles.icon} />
               </div>
-              <span className={styles.stepLabel}>KROK {item.step}</span>
+
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDescription}>{item.description}</p>
             </div>

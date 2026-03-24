@@ -6,18 +6,47 @@
 .container {
   max-width: 1120px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.column {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.columnEnd {
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+}
+
+.companyInfo {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.privacyPolicyLink {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: #fff;
+  }
 }
 
 .copy {
   margin: 0;
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.9rem;
-  text-align: center;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -26,6 +55,13 @@
   }
 
   .container {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: start;
+  }
+
+  .columnEnd {
+    text-align: right;
+    align-items: flex-end;
   }
 }

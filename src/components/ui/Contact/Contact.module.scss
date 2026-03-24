@@ -105,7 +105,9 @@
   opacity: 0;
   transform: translate3d(24px, 0, 0);
   pointer-events: none;
-  transition: opacity 0.24s ease, transform 0.24s ease;
+  transition:
+    opacity 0.24s ease,
+    transform 0.24s ease;
 }
 
 .toastVisible {
@@ -171,6 +173,40 @@
 
 .submitButton:hover {
   background: #e6c600;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--input);
+  background: var(--accent);
+  accent-color: var(--foreground);
+  cursor: pointer;
+}
+
+.label {
+  font-size: 0.84rem;
+  color: var(--muted-foreground);
+}
+
+.privacyPolicyLink {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    border-bottom 0.2s ease,
+    color 0.2s ease;
+  &:hover {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+  }
 }
 
 @media (min-width: 640px) {

@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
-import styles from "./Contact.module.scss";
 import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
 import { CONTACT_ADDRESS, CONTACT_EMAIL, CONTACT_PHONE } from "@/constants/constants";
+
+import styles from "./Contact.module.scss";
 
 export const Contact = () => {
   const [showToast, setShowToast] = useState(false);
@@ -66,14 +68,11 @@ export const Contact = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div>
-            <span className={styles.kicker}>
-              Skontaktuj się z nami
-            </span>
-            <h2 className={styles.title}>
-              Gotowy, by rozwiązać problem wilgoci?
-            </h2>
+            <span className={styles.kicker}>Skontaktuj się z nami</span>
+            <h2 className={styles.title}>Gotowy, by rozwiązać problem wilgoci?</h2>
             <p className={styles.description}>
-              Skontaktuj się z nami, aby otrzymać bezpłatną wycenę. Jesteśmy dostępni przez całą dobę.
+              Skontaktuj się z nami, aby otrzymać bezpłatną wycenę. Jesteśmy dostępni przez całą
+              dobę.
             </p>
 
             <div className={styles.infoList}>
@@ -96,9 +95,7 @@ export const Contact = () => {
           </div>
 
           <div className={styles.formCard}>
-            <h3 className={styles.formTitle}>
-              Poproś o bezpłatną wycenę
-            </h3>
+            <h3 className={styles.formTitle}>Poproś o bezpłatną wycenę</h3>
             <div
               className={`${styles.toast} ${showToast ? styles.toastVisible : ""}`}
               role="status"
@@ -129,11 +126,7 @@ export const Contact = () => {
                 className={styles.input}
                 required
               />
-              <input
-                name="address"
-                placeholder="Adres nieruchomości"
-                className={styles.input}
-              />
+              <input name="address" placeholder="Adres nieruchomości" className={styles.input} />
               <textarea
                 name="message"
                 placeholder="Opisz swoją sytuację..."
@@ -141,6 +134,21 @@ export const Contact = () => {
                 className={styles.textarea}
                 required
               />
+              <div className={styles.checkboxContainer}>
+                <input
+                  type="checkbox"
+                  name="privacyPolicy"
+                  id="privacyPolicy"
+                  required
+                  className={styles.checkbox}
+                />
+                <label htmlFor="privacyPolicy" className={styles.label}>
+                  Przeczytałem i akceptuję&nbsp;
+                  <a href="/privacy-policy" className={styles.privacyPolicyLink}>
+                    Politykę prywatności.
+                  </a>
+                </label>
+              </div>
               <button type="submit" className={styles.submitButton}>
                 Wyślij zgłoszenie
               </button>
