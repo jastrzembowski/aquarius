@@ -13,7 +13,7 @@ export const Logo = ({ size = "md", href = "#", className = "" }: LogoProps) => 
   return (
     <a href={href} className={rootClassName}>
       <span className={styles.logoMark} aria-hidden="true" />
-      Aqurius-Osuszanie
+      Aquarius Osuszanie
     </a>
   );
 };
